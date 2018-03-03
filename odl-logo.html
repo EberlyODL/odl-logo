@@ -1,0 +1,72 @@
+<link rel="import" href="../polymer/polymer.html">
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+<!--
+`odl-logo`
+
+
+@demo demo/index.html
+-->
+
+<dom-module id="odl-logo">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      #wrapper {
+        border-radius: 50%;
+        width: 3em;
+        height: 3em;
+        background-color: rgba(226,128,30,1);
+        color: white;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        font-family: "Oswald","Helvetica Neue","Helvetica",sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em
+      }
+
+      :host[theme="dark"] #wrapper {
+        background-color: black;
+        color: white;
+      }
+      :host[theme="light"] #wrapper {
+        background-color: white;
+        color: black;
+      }
+    </style>
+    <div id="wrapper">
+      ODL
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'odl-logo',
+
+      properties: {
+        /**
+         * Theme you want to render this logo
+         * Options
+         *  - default (white on orange)
+         *  - light (black on white)
+         *  - dark (white on black)
+         */
+        theme: {
+          type: String,
+          value: 'default',
+          reflectToAttribute: true,
+        },
+      },
+
+    });
+  </script>
+</dom-module>
